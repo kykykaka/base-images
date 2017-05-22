@@ -20,16 +20,13 @@ cat > $HOME/bin/sys-cleanup.sh <<'EOF'
 #
 # @filename: sys-cleanup.sh
 #
-
 set -e
-
 apt-get clean
-
 rm -rf \
-	$HOME/.bash_history \
-	/var/log/{apt/*,alternatives.log,bootstrap.log,dpkg.log,lib/apt/lists/*} \
-	/var/tmp/* \
-	/tmp/*
+        $HOME/.bash_history \
+        /var/log/{apt/*,alternatives.log,bootstrap.log,dpkg.log,lib/apt/lists/*} \
+        /var/tmp/* \
+        /tmp/*
 EOF
 
 chmod u=rwx,go= $HOME/bin/sys-cleanup.sh

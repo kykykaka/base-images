@@ -7,12 +7,6 @@
 
 set -e
 
-if [ "$container" != "docker"]; then
-	echo '$container must be set to "docker" for this script (and systemd) to work.' >&2
-	exit 1
-fi
-
-
 # Loop over services that are not usefull in a docker container an mask them
 (
 	echo local-fs.target

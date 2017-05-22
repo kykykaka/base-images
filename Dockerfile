@@ -1,4 +1,4 @@
-FROM maint/debian:latest
+FROM debian:latest
 
 MAINTAINER Debian-Systemd Docker Maintainers <docker-maint@echip.io>
 
@@ -15,6 +15,8 @@ ENV \
 WORKDIR /root
 
 COPY build/* ./.build~/
+
+RUN apt-get update && apt-get install python-apt apt-transport-https ca-certificates software-properties-common -y
 
 RUN \
 	chmod u=rwx,go= $HOME/.build~/*.sh \
